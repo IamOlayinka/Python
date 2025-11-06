@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head><title>Edit User</title></head>
+<body>
+
+<h1>Edit User {{ user_id }}</h1>
+
+<form method="POST">
+
+    <label>Name:</label>
+    <input name="name" value="{{ user.name }}" required><br><br>
+
+    <label>Age:</label>
+    <input name="age" type="number" value="{{ user.age }}" required><br><br>
+
+    <button type="submit">Save Changes</button>
+</form>
+
+</body>
+</html>

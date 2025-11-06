@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+
+<html>      
+<head>
+    <title>Test PUT/DELETE</title>  
+</head>
+<body>  
+    <h1>Flask PUT & DELETE Test</h1>
+    
+    <input type="number" id="userid" placeholder="Enter the userid" />
+    <button onclick="updateAccount()">Update</button>
+    <button onclick="deleteAccount(document.getElementById('userid').value)">delete</button>
+
+    <pre id="result"></pre>
+
+    <script>
+        function updateAccount(num) {
+            fetch(`/update/${num}`, {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name: "Updated Alice" })
+            })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("result").textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(err => console.error(err));
+        }
+        
+        function deleteAccount(num) {
+            console.log(num);
+            fetch(`/delete/${num}`, {
+                method: "DELETE"
+            })
+            .then(res => res.json())
+            .then(data => {
+                document.getElementById("result").textContent = JSON.stringify(data, null, 2);
+            })
+            .catch(err => console.error(err));
+        }
+    </script>    
+</html>
