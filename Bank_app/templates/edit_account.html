@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Account</title>
+    <body>
+    <h1>Edit Account {{account_id}}</h1>
+    <form method="POST">
+        <label for="name">Account Name:</label>
+        <input type="text" id="name" name="name" value="{{ account.name }}" required><br><br>
+
+        <label for="account_type">Account Type:</label>
+        <input type="text" id="account_type" name="account_type" value="{{ account.account_type }}" required><br><br>
+
+        <label for="balance">Balance:</label>
+        <input type="number" id="balance" name="balance" value="{{ account.balance }}" required><br><br>
+
+        <input type="submit" value="Save Account">
+    </form>
+</body> 
+</html>
