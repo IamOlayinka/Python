@@ -5,7 +5,7 @@ class Member(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
     email = models.EmailField(unique=True)
-    phone_number = models.IntegerField(max_length=15, null=True)
+    phone_number = models.IntegerField(null=True)
     join_date = models.DateField(auto_now_add=True)
 
     def __str__(self):

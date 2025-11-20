@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Centered Logo & Links Footer</title>
+    <style>
+        :root {
+            --footer-bg: #ffffff;
+            --footer-text-color: #555555;
+            --footer-link-color: #111111;
+            --footer-link-hover-color: #007bff;
+            --footer-border-color: #e7e7e7;
+        }
+
+        /* Basic body styles for demonstration */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            display: grid;
+            grid-template-rows: auto;
+            min-height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+
+        /* FOOTER STYLES START HERE */
+
+        .footer-centered {
+            background-color: var(--footer-bg);
+            color: var(--footer-text-color);
+            padding: 2.5rem 1.5rem;
+            border-top: 1px solid var(--footer-border-color);
+            text-align: center;
+        }
+
+        .footer-centered__container {
+            max-width: 800px;
+            margin: 0 auto;
+            
+            /* Core layout styles */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .footer-centered__logo {
+            display: block;
+            width: 120px;
+            height: auto;
+        }
+        
+        .footer-centered__logo path {
+            fill: #333;
+        }
+
+        .footer-centered__nav ul,
+        .footer-centered__social ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap; /* Allow links to wrap on very narrow screens */
+            justify-content: center;
+            gap: 1.5rem;
+        }
+
+        .footer-centered__nav a,
+        .footer-centered__social a {
+            color: var(--footer-link-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease-in-out;
+        }
+        
+        .footer-centered__nav a:hover,
+        .footer-centered__social a:hover {
+            color: var(--footer-link-hover-color);
+        }
+        
+        .footer-centered__social svg {
+            width: 22px;
+            height: 22px;
+            fill: var(--footer-text-color);
+            transition: fill 0.2s ease-in-out;
+        }
+
+        .footer-centered__social a:hover svg {
+            fill: var(--footer-link-hover-color);
+        }
+
+        .footer-centered__copyright {
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    
+    <footer class="footer-centered" role="contentinfo">
+        <div class="footer-centered__container">
+            
+            <!-- Logo -->
+            <a href="#" class="footer-centered__logo" aria-label="Homepage">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-labelledby="logoCenteredTitle">
+                    <title id="logoCenteredTitle">Creative Co. Logo</title>
+                    <path d="M12 0L0 12l12 12 12-12L12 0zm0 4.24L19.76 12 12 19.76 4.24 12 12 4.24z"/>
+                </svg>
+            </a>
+
+            <!-- Navigation -->
+            <nav class="footer-centered__nav" aria-label="Main Footer Navigation">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Social Media Icons -->
+            <nav class="footer-centered__social" aria-label="Social Media Links">
+                <ul>
+                    <li>
+                        <a href="#" aria-label="Our Dribbble Profile">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Dribbble</title><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12c6.627 0 12-5.373 12-12S18.627 0 12 0zm6.444 14.592c-.228.06-1.044.336-2.22.42-2.316.192-4.224-1.92-3.3-4.524.48-1.32.42-1.98-.3-2.904-.66-.9-1.548-1.128-1.908-.984.024-.228.06-.444.096-.672.3-.96 1.116-2.04 2.664-2.424 2.16-.54 4.512.612 5.124 2.616.396 1.344.204 3.324-.924 4.884-1.08 1.488-2.28 2.22-3.132 2.592.528.204 1.176.324 1.896.396.648.06 1.284.084 1.884.084.18 0 .348-.012.516-.024a10.02 10.02 0 011.8 7.308c-1.512.876-3.216 1.356-5.016 1.404-2.736.084-5.328-.864-7.224-2.556-2.04-1.788-3.48-4.2-3.924-6.912.024-.012.036-.024.06-.036.96-.408 1.344-.708 2.016-1.524.708-.888 1.152-1.98 1.308-3.144.252-2.016-1.08-3.6-2.904-4.224a10.08 10.08 0 0113.632 4.272c.384.732.516 1.464.408 2.16-.528.024-1.092.132-1.632.324-.876.336-1.38 1.236-1.152 2.22.252 1.056.996 1.824 1.956 1.944z"/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Our Behance Profile">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Behance</title><path d="M8.244 11.412V8.34h2.232c1.356 0 2.1.792 2.1 1.908 0 .936-.48 1.5-1.284 1.644v.036c.9.144 1.572.804 1.572 1.86 0 1.284-.924 2.1-2.4 2.1H8.244v-4.476zm1.392.36h.624c.732 0 1.14-.42 1.14-.972 0-.564-.408-.96-1.14-.96h-.624v1.932zm0 4.104v-2.184h.72c.816 0 1.296.432 1.296 1.116 0 .684-.504 1.068-1.32 1.068h-.696zM15.42 12.54c0-2.436 1.404-3.864 3.732-3.864 2.28 0 3.708 1.428 3.708 3.864s-1.428 3.864-3.708 3.864c-2.328 0-3.732-1.428-3.732-3.864zm6.096 0c0-1.488-.864-2.484-2.364-2.484-1.512 0-2.376.996-2.376 2.484s.864 2.484 2.376 2.484c1.5 0 2.364-1 2.364-2.484zM15.156 7.44h7.524v.9H15.156v-.9zM0 12c0 6.627 5.373 12 12 12s12-5.373 12-12-5.373-12-12-12S0 5.373 0 12z"/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" aria-label="Our Instagram Profile">
+                            <svg role="img" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><title>Instagram</title><path d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.784.297-1.459.717-2.126 1.384S.926 3.356.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913.297.784.717 1.459 1.384 2.126.667.666 1.342 1.089 2.126 1.384.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558.784-.297 1.459-.718 2.126-1.384.666-.667 1.089-1.342 1.384-2.126.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.148-.558-2.913-.297-.784-.718-1.459-1.384-2.126C21.314 1.64 20.64 1.217 19.856.92c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.056 1.17-.249 1.805-.413 2.227-.217.562-.477.96-.896 1.382-.42.419-.819.679-1.381.896-.422.164-1.057.36-2.227.413-1.266.057-1.646.07-4.85.07s-3.585-.015-4.85-.074c-1.17-.056-1.805-.249-2.227-.413-.562-.217-.96-.477-1.382-.896-.419-.42-.679-.819-.896-1.381-.164-.422-.36-1.057-.413-2.227-.057-1.266-.07-1.646-.07-4.85s.015-3.585.074-4.85c.056-1.17.249-1.805.413-2.227.217.562.477.96.896-1.382.42-.419.819.679 1.381-.896.422-.164 1.057.36 2.227-.413 1.266-.057 1.646-.07 4.85-.07zM12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.88 1.44 1.44 0 000-2.88z"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Copyright -->
+            <p class="footer-centered__copyright">
+                &copy; 2024 Creative Co. All Rights Reserved.
+            </p>
+
+        </div>
+    </footer>
+
+</body>
+</html>

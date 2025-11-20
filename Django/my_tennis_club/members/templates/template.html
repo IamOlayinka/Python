@@ -2,11 +2,13 @@
 <html>
 <body>
 
-{% for x in fruits %}
-  <h1>{{ x }}</h1>
+
+{% for x in member %}
+    <p> {{forloop.counter}}.  {{ x }}</p>
 {% endfor %}
 
-<p>In views.py you can see what the fruits variable looks like.</p>
+   
+{% include "footer.html" %}   
 
 </body>
 </html>
