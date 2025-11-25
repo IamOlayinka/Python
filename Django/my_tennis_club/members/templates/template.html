@@ -1,14 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
+<link rel="stylesheet" href="{% static 'first.css' %}">
 <body>
-
-
 {% for x in member %}
-    <p> {{forloop.counter}}.  {{ x }}</p>
+    <p> {{forloop.counter}}.  {{ x.first_name }} {{x.last_name}}</p>
 {% endfor %}
 
    
-{% include "footer.html" %}   
+ 
 
+<p>In myfirst.css you can see what the stylesheet looks like.</p>
+
+{% include "footer.html" %}  
 </body>
-</html>
+</html>    

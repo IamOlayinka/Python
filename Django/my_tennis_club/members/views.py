@@ -24,7 +24,7 @@ def details(request, id):
   return HttpResponse(template.render(context, request))
 
 def testing(request):
-  mydata = Member.objects.values_list('first_name')
+  mydata = Member.objects.all().order_by('first_name').values()
   template = loader.get_template('template.html')
   context = {
     'member': mydata,
